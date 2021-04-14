@@ -4,7 +4,7 @@ Data Source:[https://simplemaps.com/data/za-cities.json]
 
 ## Getting Started
 
-Mapping is a Python application.
+Webmaps with Python and Folium application
 
 
 #### Requirements
