@@ -11,11 +11,14 @@ data = pd.read_csv("za.csv")
 lat = list(data["lat"])
 lng = list(data["lng"])
 popups = list(data["city"])
+populations = list(data["population"])
 colors = ['black', 'red', 'green', 'lightgreen', 'darkblue', 'cadetblue', 'darkgreen', 'lightgray', 'darkpurple', 'lightblue', 'blue', 'beige', 'red', 'orange', 'gray', 'pink', 'darkred', 'lightred', 'purple'] * 6
 fg = f.FeatureGroup(name="My Map")
-for latitude, longitude,popup, color in zip(lat,lng, popups, colors) :
-    fg.add_child(f.Marker(location=[latitude, longitude], popup=popup, icon=f.Icon(color=color)))
 
+for latitude, longitude,popup, color,population in zip(lat,lng, popups, colors, populations) :
+    fg.add_child(f.Marker(location=[latitude, longitude], popup=popup + "\nPopulation: " + str(population) , icon=f.Icon(color=color)))
+
+fg.add_child(f.GeoJson(data=(open("world.json", "r", encoding='UTF-8').read())))
 map.add_child(fg)
 
 
