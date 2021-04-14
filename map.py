@@ -1,16 +1,20 @@
 import folium as f
-
+import pandas as pd
 # Create  Map object
 map =  f.Map(location = [-28.29148236287175, 23.549727933663252], zoom_start = 6, tiles= "cartodb positron")
 
 # Adding Elements to the map
-coordinates = [[-29.60848569170139, 28.345260248070595], [-23.852348170408053, 28.85612449250099] , [-26.47871416756294, 28.87755514305355]]
-popups = ["Lesotho", "Limpop", "Gauteng"]
-colors = ["red","green", "blue"]
+# Load data from csv
+data = pd.read_csv("za.csv")
 
+#get lat and lng
+lat = list(data["lat"])
+lng = list(data["lng"])
+popups = list(data["city"])
+colors = ['black', 'red', 'green', 'lightgreen', 'darkblue', 'cadetblue', 'darkgreen', 'lightgray', 'darkpurple', 'lightblue', 'blue', 'beige', 'red', 'orange', 'gray', 'pink', 'darkred', 'lightred', 'purple'] * 6
 fg = f.FeatureGroup(name="My Map")
-for coordinate,popup,color in zip(coordinates, popups, colors) :
-    fg.add_child(f.Marker(location=coordinate, popup=popup, icon=f.Icon(color=color)))
+for latitude, longitude,popup, color in zip(lat,lng, popups, colors) :
+    fg.add_child(f.Marker(location=[latitude, longitude], popup=popup, icon=f.Icon(color=color)))
 
 map.add_child(fg)
 
