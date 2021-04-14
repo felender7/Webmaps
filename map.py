@@ -17,7 +17,7 @@ populations = list(data["population"])
 colors = ['black', 'red', 'green', 'lightgreen', 'darkblue', 'cadetblue', 'darkgreen', 'lightgray', 'darkpurple', 'lightblue', 'blue', 'beige', 'red', 'orange', 'gray', 'pink', 'darkred', 'lightred', 'purple'] * 6
 
 # Adding Elements to the map
-fgv = f.FeatureGroup(name="SA MAP")
+fgv = f.FeatureGroup(name="City Markers")
 for latitude, longitude,popup, color,population in zip(lat,lng, popups, colors, populations) :
     fgv.add_child(f.Marker(location=[latitude, longitude], popup=popup + "\nPopulation: " + str(population) , icon=f.Icon(color=color)))
 
