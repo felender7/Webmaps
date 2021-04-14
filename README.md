@@ -16,3 +16,4 @@ You'll need the following installed to run the application successfully:
 * Python 3 & Pip3
 * Folium Library - `pip3 install folium`
 * Pandas Library - `pip3 install pandas`
+* Flask gunicorn - `pip3 install flask gunicorn`

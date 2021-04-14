@@ -35,5 +35,5 @@ map.add_child(f.LayerControl())
 
 
 #Save the Map
-map.save("south_africa_map.html")
+map.save("templates/index.html")
 print("Map saved")
