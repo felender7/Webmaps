@@ -3,11 +3,11 @@ List of 108 prominent cities in South Africa. Each row includes a city's latitud
 Data Source:[https://simplemaps.com/data/za-cities.json]
 
 
-[![Webmaps Image Preview](https://i.imgur.com/D9nQSZt.png)]
+![Webmaps Image Preview](https://i.imgur.com/D9nQSZt.png)
 
 ## Getting Started
 
-Webmaps with Python and Folium application
+Webmaps with Python and Folium.
 
 
 #### Requirements
